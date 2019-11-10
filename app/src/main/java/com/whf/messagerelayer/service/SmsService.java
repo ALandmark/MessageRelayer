@@ -80,14 +80,14 @@ public class SmsService extends IntentService {
             if (mobile == null || (mobile = mobile.trim()).length() == 0) {
                 SmsRelayerManager.relaySms(mNativeDataManager, content);
             } else {
-                SmsRelayerManager.relaySms(mNativeDataManager, mobile + ":" + content);
+                SmsRelayerManager.relaySms(mNativeDataManager, content);
             }
         }
         if (mNativeDataManager.getEmailRelay()) {
             if (mobile == null || (mobile = mobile.trim()).length() == 0) {
                 EmailRelayerManager.relayEmail(mNativeDataManager, content);
             } else {
-                EmailRelayerManager.relayEmail(mNativeDataManager, mobile + ":" + content);
+                EmailRelayerManager.relayEmail(mNativeDataManager, content);
             }
         }
     }
